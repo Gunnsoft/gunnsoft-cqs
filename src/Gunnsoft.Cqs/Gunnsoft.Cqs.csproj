@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Title>Gunnsoft.Cqs</Title>
+        <AssemblyName>Gunnsoft.Cqs</AssemblyName>
+        <PackageId>Gunnsoft.Cqs</PackageId>
+        <Authors>Andrew Gunn</Authors>
+        <Company>Gunnsoft</Company>
+        <AssemblyTitle>Gunnsoft.Cqs</AssemblyTitle>
+        <Description>
+            Gunnsoft CQS
+        </Description>
+        <Copyright>Copyright © Gunnsoft 2018</Copyright>
+        <PackageTags>Gunnsoft;CQS;Commands;Queries;Events</PackageTags>
+        <PackageProjectUrl>https://github.com/Gunnsoft/gunnsoft-cqs</PackageProjectUrl>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/Gunnsoft/gunnsoft-cqs</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Autofac" Version="4.6.2" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.1" />
+        <PackageReference Include="WindowsAzure.Storage" Version="9.1.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4EF4E13E-DB58-40C9-A9F1-71BC138E4247}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DDF0A83D-1399-4E2A-94E6-20098A10F78C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		build.cake = build.cake
+		build.ps1 = build.ps1
+		build.sh = build.sh
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gunnsoft.Cqs", "src\Gunnsoft.Cqs\Gunnsoft.Cqs.csproj", "{F46D8255-DE2F-4676-8119-7D7ED2347B34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F46D8255-DE2F-4676-8119-7D7ED2347B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F46D8255-DE2F-4676-8119-7D7ED2347B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F46D8255-DE2F-4676-8119-7D7ED2347B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F46D8255-DE2F-4676-8119-7D7ED2347B34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F46D8255-DE2F-4676-8119-7D7ED2347B34} = {4EF4E13E-DB58-40C9-A9F1-71BC138E4247}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5468B4A3-E70A-4495-A407-AE4ABF02710D}
+	EndGlobalSection
+EndGlobal
