@@ -1,7 +1,7 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", EnvironmentVariable("CONFIGURATION") ?? "Release");
 var artifactsDirectory = @".\artifacts";
-var version = EnvironmentVariable("APPVEYOR_BUILD_VERSION") ?? "1.2.3";
+var version = EnvironmentVariable("APPVEYOR_BUILD_VERSION") ?? "0.0.0";
 
 Task("Clean")
     .Does(() =>
