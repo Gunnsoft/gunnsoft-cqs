@@ -24,9 +24,12 @@ for:
     only:
       - master
 
-  version: 0.1.2
+  version: 0.1.3
 
   deploy:
+    - provider: Environment
+      name: gunnsoft-github-cqs
+
     - provider: Environment
       name: gunnsoft-nuget-cqs
 
@@ -35,4 +38,4 @@ for:
     except:
     - master
 
-  version: 0.1.2.{build}-{branch}
+  version: 0.1.3.{build}-{branch}
