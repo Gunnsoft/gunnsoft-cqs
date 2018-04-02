@@ -15,7 +15,7 @@
       Gunnsoft CQS
     </Description>
     <Copyright>Copyright © Gunnsoft 2018</Copyright>
-    <PackageTags>Gunnsoft;CQS;Commands;Queries;Events</PackageTags>
+    <PackageTags>Gunnsoft;AspNetCore;CQS;Commands;Queries;Events</PackageTags>
     <PackageProjectUrl>https://github.com/Gunnsoft/gunnsoft-cqs</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
