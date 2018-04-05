@@ -78,12 +78,12 @@ Task("Pack")
         CopyFile($@".\src\Gunnsoft.Cqs\bin\{configuration}\Gunnsoft.Cqs.{version}.nupkg", $@"{artifactsDirectory}\gunnsoft-cqs.nupkg"); 
         
         foreach (var filePath in GetFiles($@"{artifactsDirectory}\*.*")) 
-        { 
+        {
             if (AppVeyor.IsRunningOnAppVeyor)
             {
                 AppVeyor.UploadArtifact(filePath, new AppVeyorUploadArtifactsSettings
                 {
-                    DeploymentName = filePath.GetFilename().ToString()
+                    DeploymentName = filePath.GetFilenameWithoutExtension().ToString()
                 });
             }
         }
