@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace Gunnsoft.Cqs.Queries
 {
@@ -10,10 +11,13 @@ namespace Gunnsoft.Cqs.Queries
         where TProjection : IProjection
     {
         private readonly IQueryHandler<TQuery, TProjection> _decorated;
+        private readonly ILogger<RetryQueryHandlerDecorator<TQuery, TProjection>> _logger;
 
-        public RetryQueryHandlerDecorator(IQueryHandler<TQuery, TProjection> decorated)
+        public RetryQueryHandlerDecorator(IQueryHandler<TQuery, TProjection> decorated,
+            ILogger<RetryQueryHandlerDecorator<TQuery, TProjection>> logger)
         {
             _decorated = decorated;
+            _logger = logger;
         }
 
         public async Task<TProjection> HandleAsync(TQuery query, CancellationToken cancellationToken)
@@ -21,6 +25,7 @@ namespace Gunnsoft.Cqs.Queries
             const int retryCount = 3;
             const int retryIntervalInMilliseconds = 100;
 
+            var queryName = query.GetType().FullName;
             var exceptions = new List<Exception>();
 
             for (var i = 0; i < retryCount; i++)
@@ -34,6 +39,17 @@ namespace Gunnsoft.Cqs.Queries
                 catch (Exception exception)
                 {
                     exceptions.Add(exception);
+
+                    var exceptionName = exception.GetType().FullName;
+
+                    _logger.LogWarning
+                    (
+                        exception,
+                        "Exception {ExceptionName} thrown with message {ExceptionMessage} when handling query {QueryName}",
+                        exceptionName,
+                        exception.Message,
+                        queryName
+                    );
                 }
             }
 

@@ -48,17 +48,14 @@ namespace Gunnsoft.Cqs.Commands
 
                     var exceptionName = exception.GetType().FullName;
 
-                    if (i == retryCount - 1)
-                    {
-                        _logger.LogWarning
-                        (
-                            exception,
-                            "Exception {ExceptionName} thrown with message {ExceptionMessage} when handling command {CommandName}",
-                            exceptionName,
-                            exception.Message,
-                            commandName
-                        );
-                    }
+                    _logger.LogWarning
+                    (
+                        exception,
+                        "Exception {ExceptionName} thrown with message {ExceptionMessage} when handling command {CommandName}",
+                        exceptionName,
+                        exception.Message,
+                        commandName
+                    );
                 }
             }
 

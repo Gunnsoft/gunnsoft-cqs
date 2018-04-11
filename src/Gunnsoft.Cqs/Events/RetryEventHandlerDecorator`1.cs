@@ -48,17 +48,14 @@ namespace Gunnsoft.Cqs.Events
 
                     var exceptionName = exception.GetType().FullName;
 
-                    if (i == retryCount - 1)
-                    {
-                        _logger.LogWarning
-                        (
-                            exception,
-                            "Exception {ExceptionName} thrown with message {ExceptionMessage} when handling event {EventName}",
-                            exceptionName,
-                            exception.Message,
-                            eventName
-                        );
-                    }
+                    _logger.LogWarning
+                    (
+                        exception,
+                        "Exception {ExceptionName} thrown with message {ExceptionMessage} when handling event {EventName}",
+                        exceptionName,
+                        exception.Message,
+                        eventName
+                    );
                 }
             }
 
