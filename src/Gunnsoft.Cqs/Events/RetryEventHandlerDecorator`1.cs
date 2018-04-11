@@ -45,17 +45,6 @@ namespace Gunnsoft.Cqs.Events
                 catch (Exception exception)
                 {
                     exceptions.Add(exception);
-
-                    var exceptionName = exception.GetType().FullName;
-
-                    _logger.LogWarning
-                    (
-                        exception,
-                        "Exception {ExceptionName} thrown with message {ExceptionMessage} when handling event {EventName}",
-                        exceptionName,
-                        exception.Message,
-                        eventName
-                    );
                 }
             }
 

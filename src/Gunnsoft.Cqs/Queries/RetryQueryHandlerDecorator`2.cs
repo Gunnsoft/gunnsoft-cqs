@@ -39,17 +39,6 @@ namespace Gunnsoft.Cqs.Queries
                 catch (Exception exception)
                 {
                     exceptions.Add(exception);
-
-                    var exceptionName = exception.GetType().FullName;
-
-                    _logger.LogWarning
-                    (
-                        exception,
-                        "Exception {ExceptionName} thrown with message {ExceptionMessage} when handling query {QueryName}",
-                        exceptionName,
-                        exception.Message,
-                        queryName
-                    );
                 }
             }
 
