@@ -25,7 +25,6 @@ namespace Gunnsoft.Cqs.Queries
             const int retryCount = 3;
             const int retryIntervalInMilliseconds = 100;
 
-            var queryName = query.GetType().FullName;
             var exceptions = new List<Exception>();
 
             for (var i = 0; i < retryCount; i++)

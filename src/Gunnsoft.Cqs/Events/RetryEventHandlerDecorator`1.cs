@@ -29,7 +29,8 @@ namespace Gunnsoft.Cqs.Events
             const int retryCount = 3;
             const int retryIntervalInMilliseconds = 100;
 
-            var eventName = @event.GetType().FullName;
+            var eventName = @event.GetType().Name;
+            var eventFullName = @event.GetType().FullName;
             var exceptions = new List<Exception>();
 
             for (var i = 0; i < retryCount; i++)
@@ -66,7 +67,7 @@ namespace Gunnsoft.Cqs.Events
                     "Exception {ExceptionName} thrown with message {ExceptionMessage} when storing poisoned event {EventName}",
                     exceptionName,
                     exception.Message,
-                    eventName
+                    eventFullName
                 );
             }
 

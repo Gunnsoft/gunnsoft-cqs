@@ -31,7 +31,8 @@ namespace Gunnsoft.Cqs.Commands
             const int retryCount = 3;
             const int retryIntervalInMilliseconds = 100;
 
-            var commandName = command.GetType().FullName;
+            var commandName = command.GetType().Name;
+            var commandFullName = command.GetType().FullName;
             var exceptions = new List<Exception>();
 
             for (var i = 0; i < retryCount; i++)
@@ -66,7 +67,7 @@ namespace Gunnsoft.Cqs.Commands
                     "Exception {ExceptionName} thrown with message {ExceptionMessage} when storing poisoned command {CommandName}",
                     exceptionName,
                     exception.Message,
-                    commandName
+                    commandFullName
                 );
             }
 
